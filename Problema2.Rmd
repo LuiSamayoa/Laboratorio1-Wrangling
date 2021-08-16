@@ -1,0 +1,21 @@
+---
+title: "Problema2"
+output: html_document
+---
+
+## install Libraries
+install.packages("modeest")
+
+library("modeest")
+
+## Vectors
+a <- sample(1:100, size= 50, replace=TRUE)
+b <- sample(1:50, size = 50 ,replace=TRUE)
+c <- sample(1:150, size = 50, replace=TRUE)
+
+
+#List
+Lst <- list(a,b,c)
+Lst
+
+lapply(X=Lst, FUN = mfv)

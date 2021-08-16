@@ -1,0 +1,67 @@
+---
+title: "Problema1"
+output: html_document
+---
+
+## Intalling Libraries
+install.packages("tidyverse")
+install.packages("lubridate")
+install.packages("openxlsx")
+install.packages("readxl")
+
+## Load Libraries
+require(tidyverse)
+require(dplyr)
+require(lubridate)
+require(readr)
+require(ggplot2)
+require(stringr)
+require(openxlsx)
+require(readxl)
+
+## Get and set working directory
+
+getwd()
+setwd("/Users/LuisJavier/Documents/GitHub/DataWrangling/Laboratorio #1/Laboratorio_1")
+
+## Read Table
+Tb1<-read_excel("01-2018.xlsx")
+Tb2<-read_excel("02-2018.xlsx")
+Tb3<-read_excel("03-2018.xlsx")
+Tb4<-read_excel("04-2018.xlsx")
+Tb5<-read_excel("05-2018.xlsx")
+Tb6<-read_excel("06-2018.xlsx")
+Tb7<-read_excel("07-2018.xlsx")
+Tb8<-read_excel("08-2018.xlsx")
+Tb9<-read_excel("09-2018.xlsx")
+Tb10<-read_excel("10-2018.xlsx")
+Tb11<-read_excel("11-2018.xlsx")
+
+## Col reader
+colnames(Tb1)
+colnames(Tb10)
+colnames(Tb8)
+
+## Deleting Columns
+Tb8<- Tb8[,-9:-10]
+Tb7<- Tb7 [,-9]
+Tb9<- Tb9 [,-9]
+Tb10<- Tb10 [,-9]
+Tb11<- Tb11 [,-9]
+
+## Add Column
+Tb1$Fecha<-'01-2018'
+Tb2$Fecha<-'02-2018'
+Tb3$Fecha<-'03-2018'
+Tb4$Fecha<-'04-2018'
+Tb5$Fecha<-'05-2018'
+Tb6$Fecha<-'06-2018'
+Tb7$Fecha<-'07-2018'
+Tb8$Fecha<-'08-2018'
+Tb9$Fecha<-'09-2018'
+Tb10$Fecha<-'10-2018'
+Tb11$Fecha<-'11-2018'
+
+## Joining Tables
+Full_tb=rbind(Tb1,Tb2,Tb3,Tb4,Tb5,Tb6,Tb7,Tb8,Tb9,Tb10,Tb11)
+view(Full_tb)

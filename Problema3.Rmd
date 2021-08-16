@@ -1,0 +1,19 @@
+---
+title: "Problema3"
+output: html_document
+---
+
+##Install Packages
+install.packages("readr")
+
+library(readr)
+
+#Locate Doc
+getwd()
+setwd("Users/LuisJavier/Documents/GitHub/DataWrangling/Laboratorio #1/Laboratorio_1")
+
+##Load Doc
+
+PV_En2019 <- read_delim("INE_PARQUE_VEHICULAR_080219.txt", delim = "|", show_col_types = FALSE)
+
+View(PV_En2019)
